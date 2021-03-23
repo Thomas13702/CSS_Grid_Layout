@@ -1,0 +1,43 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 1em;
+  justify-items: stretch; /*start : Puts the element at the start of its column default is stretch*/
+  align-items: stretch; /* start :Similar to justify items but puts the at the top of its column default is stretch*/
+}
+
+.wrapper > div {
+  background-color: #eee;
+  padding: 1em;
+}
+
+.wrapper > div:nth-child(odd) {
+  /* Makes every odd element a different shade of grey */
+  background-color: #ddd;
+}
+
+.box1 {
+    /*align-self: start;*/ /* Aligns box 1 at the top of column*/
+    grid-column: 1/3; /* Spans horizontally across 2 columns - > 3 edges of columns left hand, middle, right hand*/
+    grid-row: 1/3;/* Spans vertically across 2 rows - > 3 edges of columns top, middle, bottom*/
+}
+
+.box2{
+    /* align-self: end; Aligns box 2 at the bottom of column space */
+    grid-column: 3;
+    grid-row: 1/3;
+}
+
+.box3{
+    /* justify-self: end; Aligns box to the right hand side of column, center is in the center */
+    grid-column: 2/4;
+    grid-row: 3;
+}
+
+.box4{
+    grid-column: 1;
+    grid-row: 2/4; /* can overlap things */
+    border: 1px solid #333;
+}
+
